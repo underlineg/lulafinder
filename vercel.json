@@ -1,21 +1,11 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "app.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "responseLimit": "7mb",
-        "includeFiles": ["templates/**", "lula_finder.py"]
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
-    {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
     {
       "src": "/(.*)",
       "dest": "app.py"
